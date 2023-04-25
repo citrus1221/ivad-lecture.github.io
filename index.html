@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>蔡禾昕</title>
+  <style>
+    /* 设置全局样式 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 设置body元素的样式 */
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    /* 设置头部元素的样式 */
+    header {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+
+    }
+
+    header a {
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-family: 'PixelFont2', Arial, sans-serif;
+      font-size: 24px;
+      background-color: rgb(255, 255, 255);
+      box-shadow:
+        0 0 0 1px #000,
+        -2px 3px 0 1px #000,
+        1px 0 0 1px #000,
+        1px 1px 0 1px #000;
+    }
+
+    .h3a {
+      margin-bottom: -18px;
+    }
+
+
+
+    /* 设置主体元素的样式 */
+
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: minmax(150px, 25%) 1fr;
+    }
+
+    /* 设置侧栏元素的样式 */
+    aside {
+      padding-top: 80px;
+      background-color: #eee;
+      text-align: center;
+
+    }
+
+    /* 设置内容元素的样式 */
+    article {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      padding-top: 80px;
+      background-color: #ccc;
+    }
+
+    /* 设置左侧内容元素的样式 */
+    .left-column {
+      background-color: #ccc;
+      flex: 1;
+      padding: 30px;
+    }
+
+    .left-column img {
+      max-width: 100%;
+      max-height: 100%;
+      margin-right: 10px;
+      object-fit: contain;
+    }
+
+    .left-column h2 {
+      align-items: center;
+    }
+
+    /* 设置中间内容元素的样式 */
+    .middle-column {
+      background-color: #ddd;
+      flex: 1;
+      padding: 30px;
+    }
+
+    .middle-column img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      padding: 20px;
+    }
+
+    .middle-column h2 {
+      align-items: center;
+    }
+
+    .middle-colum p {
+      color: #333;
+      font-family: 'PixelFont2', Arial, sans-serif;
+      font-size: 24px;
+    }
+
+
+    /* 设置右侧内容元素的样式 */
+    .right-column {
+      padding: 40px;
+      background-color: #fff;
+      box-shadow:
+        0 0 0 1px #000,
+        -5px 7px 0 1px #000,
+        1px 0 0 1px #000,
+        1px 1px 0 1px #000;
+    }
+
+    .right-column img {
+      width: 500px;
+    }
+
+    /* 设置底部元素的样式 */
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 5px;
+      width: 100%;
+      text-align:center
+    }
+
+    .last {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      /* 设置footer高度 */
+      background-color: #ccc;
+    }
+
+
+    /* 定义自己的像素风格字体 */
+    @font-face {
+      font-family: 'PixelFont1';
+      src: url('./素材/DinkieBitmap-7pxDemo.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'PixelFont2';
+      src: url('./素材/DinkieBitmap-9pxDemo.ttf') format('truetype');
+    }
+
+    /* 使用像素风格字体的样式 */
+    h1,
+    h2 {
+      font-family: 'PixelFont1', Arial, sans-serif;
+      font-size: 48px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-family: 'PixelFont2', Arial, sans-serif;
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .aside-top {
+      margin-top: 310px;
+      margin-bottom: 50px;
+      margin-left: 30px;
+      margin-right: 30px;
+      padding-top: 14px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid black;
+      position: sticky;
+      top: 80px;
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .hello h1 {
+      font-size: 36px;
+    }
+
+    .aside-top h1 {
+      font-size: 36px;
+      position: relative;
+      left: -60px;
+    }
+
+    .tou {
+      width: 200px;
+      max-width: 80%;
+      max-height: 100%;
+      margin-top: 20px;
+    }
+
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: #fff;
+      box-shadow:
+        0 0 0 1px #000,
+        0 1px 0 1px #000,
+        1px 0 0 1px #000,
+        1px 1px 0 1px #000;
+      box-sizing: border-box;
+      padding: 20px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div style="display: flex;align-items: center;">
+      <h1 style="flex: 0 1 70%;">Welcome to my personal website!</h1>
+      <img src="./素材/xin.png" height="65px">
+      <div style="flex: 0 1 30%; display: flex;justify-content: space-between;">
+        <a href="#div1" style="margin-right: 20px;">基本信息</a>
+        <a href="#div2" style="margin-right: 20px;">学习经历</a>
+        <a href="#div3" style="margin-right: 20px;">作品展示</a>
+      </div>
+    </div>
+  </header>
+  <main class="grid-container">
+    <aside>
+      <img class="tou" src="./素材/tou.png">
+      <div class="hello">
+        <h1>hello!</h1>
+        <h1>i'm acai!</h1>
+      </div>
+      <div class="aside-top">
+        <h1>联系方式</h1>
+        <h3>
+          电话：15734128029<br>
+          微信：chxbox108<br>
+          邮箱：1183895426@qq.com
+        </h3>
+      </div>
+    </aside>
+    <article>
+      <div id="div1" class="left-column" style="display: flex;">
+        <div style="flex: 0 1 20%; display: flex">
+          <h2 style="display: flex">基本信息</h2>
+        </div>
+        <div style="flex: 0 1 35%;">
+          <p>姓名：蔡禾昕<br>年龄：20<br>生日：2002.10.08</p>
+          <p>籍贯：辽宁大连</p>
+          <p>｜</p>
+          <p>现就读于浙江大学艺术与考古学院<br>视觉传达设计2001班</p>
+          <p>｜<br>｜</p>
+          <p>兴趣爱好：</p>
+          <p>书籍/电影/游戏/拍照/平面设计/画速写/网上冲浪/…</p>
+        </div>
+        <div style="flex: 0 1 45%; display: flex"><img src="./素材/名字.png"></div>
+      </div>
+
+      <div id="div2" class="middle-column" style="display: flex;">
+        <div style="flex: 0 1 20%; display: flex">
+          <h2 style="display: flex">学习经历</h2>
+        </div>
+        <div style="flex: 0 1 25%; display: flex">
+          <img class="tu" src="./素材/tu.png">
+        </div>
+
+        <div style="flex: 0 1 55%; display: flex;flex-direction: column">
+          <p>读过的学校</p>
+          <ul>
+            <li>2005-2008 辽宁省大连市开发区红梅幼儿园</li>
+            <li>2008.9-2014.7 辽宁省大连市开发区红梅小学</li>
+            <li>2014.9-2017.7 辽宁省大连市开发区第七中学</li>
+            <li>2017.9-2020.7 辽宁省大连市中山区第十五中学</li>
+            <li>2020.9至今 浙江大学</li>
+          </ul>
+          <p>专业技能</p>
+          <ul>
+            <li>插画(手绘/procreate)</li>
+            <li>平面(Adobe Photoshop/Adobe Illustrator)</li>
+            <li>短暂学习过3d软件(c4d/blender)、影视后期(Adobe After Effects/Adobe Premiere) 熟悉基本操作</li>
+            <li>正在学习html和css</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div id="div3" class="right-column">
+        <h2>作品展示·海报·</h2>
+        <h2>Showcase</h2>
+        <div>
+          <img src="./素材/showcase/作业03-04.png">
+          <img src="./素材/showcase/作业03-05.png">
+          <img src="./素材/showcase/作业04_画板 1的副本.jpg">
+          <img src="./素材/showcase/市场-02的副本.JPG">
+          <img src="./素材/showcase/市场_画板 1的副本.JPG">
+          <img src="./素材/showcase/樂園_画板 1-03的副本.png">
+          <img src="./素材/showcase/装饰主义1的副本.jpg">
+          <img src="./素材/showcase/装饰主义2的副本.jpg">
+        </div>
+        <div>
+          <input id="input1" placeholder="..."></input>
+          <button onclick="printInput()">打印</button>
+        </div>
+        <form>
+          <input type="text" placeholder="姓名" list="xxx">
+          <datalist id="xxx">
+            <option value="123">
+            <option value="456">
+            <option value="789">
+          </datalist>
+          </input type="submit">
+
+          <input type="text" placeholder="学号" list="browsers">
+          <datalist id="browsers">
+            <option value="3200101433">
+            <option value="3200xxxxxx">
+          </datalist>
+          </input type="submit">
+          <button onclick="alert('提交hhhh')">提交表单</button>
+        </form>
+      </div>
+
+
+    </article>
+  </main>
+  <div class="last">
+    <footer>
+      <p>-----Welcome-----</p>
+    </footer>
+  </div>
+  <script>
+    alert("欢迎来到我的主页～");
+  </script>
+  <script>
+    function printInput() {
+      let formInput = document.getElementById('input1')
+      // console.log(formInput.value)
+      alert(formInput.value)
+    }
+  </script>
+
+</body>
+
+</html>
